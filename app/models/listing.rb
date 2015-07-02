@@ -8,7 +8,10 @@ class Listing < ActiveRecord::Base
                     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
                     :path => ":style/:id_:filename"
 
-     end               
+     end  
+
+     validates :name, :description, :price, presence: true
+       validates :price, numericality: { greater_than: 0 }             
                   
-  validates_attachment :image, presence: true, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+      validates_attachment :image, presence: true, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 end
