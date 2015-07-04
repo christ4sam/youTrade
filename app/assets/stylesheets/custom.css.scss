@@ -1,7 +1,9 @@
 @import "bootstrap";
 
 body {
-  background-color: #d6d6d4;
+  background-image: url('floral-background.jpg');
+  background-color: #ffffff;
+  // background-color: #d6d6d4;
   color: #333333;
   font-family: Arial, Helvetica, sans-serif;
 
@@ -45,6 +47,15 @@ body {
       font-size: 15px;
       margin: 0px;
     }
+  }
+
+    .jumbotron {
+      background-image: url('Slide05.jpg');
+      h1, h2 {
+        font-family :'Roboto Slab', sans-serif; 
+        color :#FFFFFF;
+        
+      }
   }
 
 
