@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :listings
+
+  
+  devise_for :users 
+  resources :listings do
+    resources :orders
+  end
   get 'pages/about'
   get 'pages/contact'
   get 'seller' => "listings#seller"
   
   root 'listings#index'
 
-  get 'pages/handknittedbabyclothes'
-  get 'pages/handmadejewellerys'
-  get 'pages/handmadesofas'
-  get 'pages/handmadefurnitures'
-  get 'pages/handmadeshoes'
-  get 'pages/handmadeleatherbags'
 
   
 
