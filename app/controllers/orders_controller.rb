@@ -29,9 +29,25 @@ class OrdersController < ApplicationController
     @order.buyer_id = current_user.id
     @order.seller_id = @seller.id
 
+    Stripe.api_key = ENV["STRIPE_API_KEY"]
+        token = params[:stripeToken]
+
+        begin
+          charge = Stripe::Charge.create(
+            :amount => (@listing.price * 100).floor,
+            :currency => "usd",
+            :source => token,
+            # :description => "Example charge"
+            )
+          flash[:notice] = "Thanks for ordering!"
+        rescue Stripe::CardError => e
+          flash[:danger] = e.message
+        end
+
+
     respond_to do |format|
       if @order.save
-        format.html { redirect_to root_url, notice: 'Order was successfully created.' }
+        format.html { redirect_to root_url}
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -46,8 +62,8 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, only allow the white list through., :stripe_card_token
     def order_params
-      params.require(:order).permit(:address, :city, :state)
+      params.require(:order).permit(:address, :city, :state, :stripe_card_token)
     end
 end
