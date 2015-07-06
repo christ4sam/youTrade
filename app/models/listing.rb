@@ -16,5 +16,6 @@ class Listing < ActiveRecord::Base
       validates_attachment :image, presence: true, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
       belongs_to :user
+      belongs_to :category
       has_many :orders
 end
