@@ -33,6 +33,8 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link", data: {no_turbolink: true} %>
+<div class="form-group">
+  <%= link_to 'New Listing', new_listing_path, class: "btn btn-primary", data: {no_turbolink: true} %>
+  </div>
 <% end %>
 
