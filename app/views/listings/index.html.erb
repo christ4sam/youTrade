@@ -24,6 +24,8 @@
   </div>
 </div>
 <br>
+<%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
+<br>
 
 <% if user_signed_in? %>
 <div class="form-group">

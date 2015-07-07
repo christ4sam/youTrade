@@ -12,6 +12,8 @@ gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro", "~> 0.7.0"
 gem 'devise'
 gem 'stripe', :source => 'https://code.stripe.com/'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 
 
