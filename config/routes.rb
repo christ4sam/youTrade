@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
 
+  scope "(:locale)", locale: /en|it/ do 
+    resources :categories
+    devise_for :users 
+    resources :listings do
+    resources :orders, only: [:new, :create]
+    end
+    get 'pages/about'
+    get 'pages/contact'
+    get 'seller' => "listings#seller"
+    get 'sales' => "orders#sales"
+    get 'purchases' => "orders#purchases"
   
-  resources :categories
-  devise_for :users 
-  resources :listings do
-  resources :orders, only: [:new, :create]
-  end
-  get 'pages/about'
-  get 'pages/contact'
-  get 'seller' => "listings#seller"
-  get 'sales' => "orders#sales"
-  get 'purchases' => "orders#purchases"
-  
-  root 'listings#index'
+    root 'listings#index'
+  end  
 
 
   
