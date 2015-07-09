@@ -20,6 +20,29 @@
 <% if current_user == @listing.user %>
   <%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> 
  <% end %>
+ 
+ <div >
+ <table class="table table-striped table-bordered">
+  <div class="row">
+  <div class="col-xs-6 col-md-3">
+
+  <tr>
+    <th class="center"><%= image_tag @listing.image.url %><h6>Same design here</h6><p><%= number_to_currency(@listing.price)%></p></th>
+   
+    <th class="center"><%= image_tag @listing.image.url %><h6>Same design here</h6><p><%= number_to_currency(@listing.price)%></p></th>
+    
+    <th class="center"><%= image_tag @listing.image.url %><h6>Same design here</h6><p><%= number_to_currency(@listing.price)%></p></th>
+    
+    <th class="center"><%= image_tag @listing.image.url %><h6>Same design here</h6><p><%= number_to_currency(@listing.price)%></p></th>
+<th class="center"><%= image_tag @listing.image.url %><h6>Same design here</h6><p><%= number_to_currency(@listing.price)%></p></th>
+  </tr>
+  </table>
+  </div>
+
+    
+      
+ 
+
  <div class="form-group">
  <%= link_to 'Back', listings_path, class: "btn btn-primary" %>
  </div>
