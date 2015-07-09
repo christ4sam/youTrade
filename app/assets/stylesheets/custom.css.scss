@@ -75,13 +75,14 @@ body {
 
   }
 
-  .page-header{
+  .logo-page-header{
     text-align: center;
-    background-color: #643b4f;
-    color :#FFFFFF;
-    margin-left: 3px;
-   padding-top: 1px; 
-
+    background-color:  #ffffff;
+    color :#643b4f;
+   padding-top: 1px;
+   padding-bottom: 1px;
+   text-decoration: none; 
+  
   }
 
   .footer-page-header{
@@ -94,6 +95,19 @@ body {
 
 
   }
+
+  .page-header{
+    color :#FFFFFF;
+     text-align: center;
+    background-color: #643b4f;
+     margin-left: 3px;
+    padding-top: 6px; 
+    height: 45px;
+    text-decoration: none;
+
+  }
+  
+  
 
  
 
