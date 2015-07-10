@@ -1,6 +1,6 @@
 <div class="jumbotron">
-<%= t('jumbotron_title_html') %>
-<%= t('jumbotron_subtitle_html') %>
+  <%= t('jumbotron_title_html') %>
+  <%= t('jumbotron_subtitle_html') %>
 
 </div>
 <div class="logo-page-header">
@@ -21,7 +21,7 @@
           <h5><%= listing.name %></h5>
           <p><%= number_to_currency(listing.price) %></p>
           <p><%= t('sold_by', user: listing.user.name)  %></p>
- 
+
         </div>
       </div> 
     </div>
@@ -35,57 +35,45 @@
 <%= will_paginate @listings, renderer: BootstrapPagination::Rails %>
 
 <br>
-<div class="fb-like" data-href="https://youtrade.herokuapp.com/" data-layout="    button_count" data-action="like" data-show-faces="false" data-share="false">
-  </div>
-  </div>
+
+<br>
+<di>
+ <% if user_signed_in? %>
+ <div class="form-group">
+   <%= link_to new_listing_path, class: "btn btn-primary", data: {no_turbolink: true} do %>
+   <i class="glyphicon glyphicon-plus"></i><%= t('New_listing') %>
+   <% end %> 
+ </div>
+ <% end %>
+ <br>
+
+ <div class="fb-like" data-href="https://youtrade.herokuapp.com/" data-layout="   button_count" data-action="like" data-show-faces="false" data-share="false">
+ </div>
+
+</div>
+
 
 <h4>
-<div class="page-header">
-<%= link_to t('page-header.Retrun Policy'), pages_return_path %>
-<%= link_to t('page-header.Delivery'), pages_contact_path %>
-<%= link_to t('page-header.General Terms and Conditions'), pages_contact_path %>
-<%= link_to t('page-header.Payment'), pages_contact_path %>
-<%= link_to t('page-header.Damage Items'), pages_contact_path %>
+  <div class="page-header">
+    <%= link_to t('page-header.Retrun Policy'), pages_return_path %>
+    <%= link_to t('page-header.Delivery'), pages_delivery_path %>
+    <%= link_to t('page-header.General Terms and Conditions'), pages_terms_condition_path %>
+    <%= link_to t('page-header.Payment'), pages_payment_path %>
+    <%= link_to t('page-header.Damaged goods'), pages_damaged_goods_path %>
+  </di>
 </h4>
 
 <div class="jumbotron">
-<%= t('jumbotron_title_html') %>
-<%= t('jumbotron_subtitle_html') %>
-
+  <%= t('jumbotron_title_html') %>
+  <%= t('jumbotron_subtitle_html') %>
 </div>
 </div>
-
-
-
-<!-- <div class="page-header">
-<h5><l>Retrun Policy</l>
-<l>Delivery</l>
-<l>Damage Items</l>
-<l>Payment</l></h5>
-</div>
-  <!<sect -->
- 
-     
-      
-      
-          
-  
-  
-
-
-  
-
-<% if user_signed_in? %>
-<div class="form-group">
-  <%= link_to new_listing_path, class: "btn btn-primary", data: {no_turbolink: true} do %>
-  <i class="glyphicon glyphicon-plus"></i><%= t('New_listing') %>
-  <% end %> 
-</div>
-<% end %>
 
 <br>
 <div class="footer">
-<div class="center">
-  <%= image_tag("card-image.jpg", :alt => "images") %>
+  <div class="center">
+    <%= image_tag("card-image.jpg", :alt => "images") %>
 
-  
+  </div>
+</div> 
+<br>
